@@ -4,7 +4,6 @@ import { css } from '@emotion/react'
 
 export const Header = styled.h1`
   font-size: 28px;
-  margin-bottom: 40px;
 `
 
 export const Container = styled.div`
@@ -22,23 +21,49 @@ export const Container = styled.div`
 export const FormSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  ${({ theme }) => css`${theme.breakpoints.up('md')} {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%, -50%);
-  }`} 
+  position: relative;
+  @media screen and (min-width: 900px) {
+    width: 40%;
+    height: 100vh;
+  }
 `
 
 export const GraphicSectionContainer = styled.div`
   position: relative;
-  width: 60%;
+  text-align: center;
+
+  @media screen and (min-width: 900px) {
+    width: 60%;
+    height: 100vh;
+  }
+
+  @media screen and (max-width: 900px) {
+    min-height: 350px;
+    max-height: 600px;
+  }
+`
+
+export const ImageContainer = styled.div`
+  @media screen and (min-width: 900px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
 `
 
 export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 400px;
+  max-height: 200px;
+  margin: auto;
 
+  @media screen and (min-width: 900px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
 `

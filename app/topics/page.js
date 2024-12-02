@@ -10,15 +10,25 @@ import DialogTitle from '@mui/material/DialogTitle'
 import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 
-const FilterBar = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 800px;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
+`
+
+const FilterBar = styled.div`
+  margin-bottom: 8px;
 `
 
 const PostsWrapper = styled.div`
   background-color: white;
   border-radius: 12px;
   width: 800px;
+  margin: auto;
 
   @media screen and (max-width: 900px) {
     width: 100%;
@@ -69,9 +79,9 @@ export default function Topics() {
   return !isReady ?
     <h1>Loading...</h1> :
     (
-      <div>
+      <Wrapper>
         <FilterBar>
-          <ActionButton style={{ alignSelf: 'flex-end' }} onClick={() => setIsCreatePostDialogOpen(true)}>Create +</ActionButton>
+          <ActionButton style={{ alignSelf: 'flex-end', marginLeft: 'auto' }} onClick={() => setIsCreatePostDialogOpen(true)}>Create +</ActionButton>
         </FilterBar>
         <PostsWrapper>
           {topicData.map(topic => <TopicCard username={topic.username} title={topic.title} content={topic.content} commentNumber={topic.comments?.length} />)}
@@ -87,6 +97,6 @@ export default function Topics() {
             <ActionButton variant="primary" onClick={handleCreatePost}>Post</ActionButton>
           </DialogActions>
         </Dialog>
-      </div>
+      </Wrapper>
     )
 }
