@@ -5,7 +5,9 @@ import TextField from '@mui/material/TextField'
 export const COLOR = {
   SUCCESS: '#49A569',
   BORDER_GRAY: '#F9F9F9',
+  GRAY_100: '#BBC2C0',
   GREEN_300: '#2B5F44',
+  GREEN_500: '#243831',
 }
 
 export const BUTTON_VARIANT = {
