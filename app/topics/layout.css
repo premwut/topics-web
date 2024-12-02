@@ -1,0 +1,34 @@
+#navbar {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #243831;
+  padding: 18px 32px;
+  height: 24px;
+}
+
+#main-wrapper {
+  display: flex;
+}
+
+#sidebar {
+  width: 280px;
+  height: 100%;
+  background-color: BBC2C0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-item {
+  padding: 8px 12px;
+}
+
+#content-wrapper {
+  padding: 24px 16px;
+}
+
+@media screen and (max-width: 900px) {
+  #sidebar {
+    display: none;
+  }
+}

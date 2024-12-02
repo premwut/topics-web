@@ -4,8 +4,10 @@ import TextField from '@mui/material/TextField'
 
 export const COLOR = {
   SUCCESS: '#49A569',
+  TEXT_BLACK: '#101828',
   BORDER_GRAY: '#F9F9F9',
   GRAY_100: '#BBC2C0',
+  GRAY_300: '#939494',
   GREEN_300: '#2B5F44',
   GREEN_500: '#243831',
 }
@@ -31,8 +33,6 @@ const getButtonStyles = (action = 'primary') => {
 }
 
 const StyledButton = styled(Button)`
-  color: ${({ color }) => color && color};
-  background-color: ${({ backgroundColor }) => backgroundColor && backgroundColor};
   border-radius: 8px;
   border: 1px solid ${COLOR.SUCCESS};
 `
@@ -40,7 +40,7 @@ const StyledButton = styled(Button)`
 export const ActionButton = ({ variant = 'primary', ...restProps }) => {
   const buttonStyles = getButtonStyles(variant)
 
-  return <StyledButton color={buttonStyles.color} backgroundColor={buttonStyles.backgroundColor} {...restProps} />
+  return <StyledButton sx={{ color: buttonStyles.color, backgroundColor: buttonStyles.backgroundColor }} {...restProps} />
 }
 
 export const StyledTextField = styled(TextField)`

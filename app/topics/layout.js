@@ -39,7 +39,6 @@ const ContentWrapper = styled.div`
 
 export default function TopicLayout({ children }) {
   const theme = useTheme()
-  const isMobile = theme.breakpoints.down('md')
   const handleClickSignIn = () => {
     window.location.assign('/login')
   }
@@ -62,5 +61,6 @@ export default function TopicLayout({ children }) {
         </Sidebar>
         <ContentWrapper>{children}</ContentWrapper>
       </MainWrapper>
-    </main>)
+    </main>
+  )
 }
