@@ -6,6 +6,11 @@ const Wrapper = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
 `
 const ProfileSection = styled.div`
   display: flex;

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import Textarea from '@mui/material/TextareaAutosize'
 
 export const COLOR = {
   SUCCESS: '#49A569',
@@ -44,6 +45,11 @@ export const ActionButton = ({ variant = 'primary', ...restProps }) => {
 }
 
 export const StyledTextField = styled(TextField)`
+  border-radius: 8px;
+  border: 1px solid ${COLOR.BORDER_GRAY};
+`
+
+export const StyledTextarea = styled(Textarea)`
   border-radius: 8px;
   border: 1px solid ${COLOR.BORDER_GRAY};
 `
