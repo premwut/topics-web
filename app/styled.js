@@ -1,9 +1,11 @@
 import styled from '@emotion/styled'
 import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
 
 export const COLOR = {
   SUCCESS: '#49A569',
-
+  BORDER_GRAY: '#F9F9F9',
+  GREEN_300: '#2B5F44',
 }
 
 export const BUTTON_VARIANT = {
@@ -38,3 +40,8 @@ export const ActionButton = ({ variant = 'primary', ...restProps }) => {
 
   return <StyledButton color={buttonStyles.color} backgroundColor={buttonStyles.backgroundColor} {...restProps} />
 }
+
+export const StyledTextField = styled(TextField)`
+  border-radius: 8px;
+  border: 1px solid ${COLOR.BORDER_GRAY};
+`

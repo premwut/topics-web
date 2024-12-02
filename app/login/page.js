@@ -1,10 +1,14 @@
 "use client"
-import TextField from "@mui/material/TextField"
 import { useState } from "react"
-import { ActionButton } from "../styled"
+import { ActionButton, StyledTextField } from "../styled"
+import { Container, FormSectionContainer, FormWrapper, GraphicSectionContainer, Header } from "./styled"
+import { useTheme } from "@mui/material"
+import './page.css'
 
 export default function Login() {
   const [username, setUsername] = useState('')
+
+  const theme = useTheme()
 
   const onClickLogin = () => {
     sessionStorage.setItem('username', username)
@@ -12,10 +16,15 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <h1>Hello Login</h1>
-      <TextField type='text' value={username} onChange={e => setUsername(e.target.value)} placeholder="please enter username" />
-      <ActionButton variant="primary" type='button' onClick={onClickLogin}>Login</ActionButton>
-    </div>
+    <Container theme={theme}>
+      <FormSectionContainer theme={theme}>
+      <Header>Sign in</Header>
+      <FormWrapper>
+        <StyledTextField type='text' value={username} onChange={e => setUsername(e.target.value)} placeholder="please enter username" />
+        <ActionButton variant="primary" type='button' onClick={onClickLogin}>Login</ActionButton>
+      </FormWrapper>
+      </FormSectionContainer>
+      <GraphicSectionContainer><img src="/login-page-graphic.svg" /></GraphicSectionContainer>
+    </Container>
   )
 }
