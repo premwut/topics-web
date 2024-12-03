@@ -47,7 +47,6 @@ const CommentText = styled.p`
 `
 
 export default function TopicCard({ username, title, content, commentNumber }) {
-  console.log('[TopicCard] username:', username)
   return (
     <Wrapper>
       <ProfileSection>

@@ -58,7 +58,6 @@ export default function Topics() {
         setIsReady(true)
       })
   }, [])
-  console.log(topicData)
 
   const createTopicRequest = ({ username, title, content }) => {
     const myHeaders = new Headers();
@@ -84,7 +83,7 @@ export default function Topics() {
           <ActionButton style={{ alignSelf: 'flex-end', marginLeft: 'auto' }} onClick={() => setIsCreatePostDialogOpen(true)}>Create +</ActionButton>
         </FilterBar>
         <PostsWrapper>
-          {topicData.map(topic => <TopicCard username={topic.username} title={topic.title} content={topic.content} commentNumber={topic.comments?.length} />)}
+          {topicData.map(topic => <TopicCard key={topic.id} username={topic.username} title={topic.title} content={topic.content} commentNumber={topic.comments?.length} />)}
         </PostsWrapper>
         <Dialog open={isCreatePostDialogOpen} onClose={() => setIsCreatePostDialogOpen(false)}>
           <DialogTitle>Create Post</DialogTitle>

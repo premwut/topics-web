@@ -17,4 +17,5 @@ Due to the design choice that is using session storage, this application mostly 
 ## How to test
 
 This project requires a running server on the same local machine. Server will be hosted in [http://localhost:8000](http://localhost:8000)
-- Link to repository: [https://github.com/premwut/topics-service](https://github.com/premwut/topics-service)
+- Clone the server repository and start server: [https://github.com/premwut/topics-service](https://github.com/premwut/topics-service)
+- Start this web server by `npm run dev` and go to [http://localhost:3000/login](http://localhost:3000/login)

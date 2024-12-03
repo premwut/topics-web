@@ -35,7 +35,7 @@ const SidebarItem = styled.div`
 
 const ContentWrapper = styled.div`
   padding: 24px 16px;
-  width: 100%
+  width: 100%;
 `
 
 export default function TopicLayout({ children }) {
